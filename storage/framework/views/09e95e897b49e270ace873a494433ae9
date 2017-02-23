@@ -1,0 +1,57 @@
+<?php $__env->startSection('content'); ?>
+			<div class="content">
+				<!-- banner -->
+				<div class="banner about-banner"> 
+					<div class="banner-img">  
+						<h3>Detailed View</h3>   
+					</div> 
+				</div>
+				<!-- //banner -->
+				<!-- properties --> 
+				<?php foreach($events as $post): ?>
+				<div class="w3agile properties">   
+					<div class="properties-img properties-img-single">
+						<img class="banner-img2">
+						<div class="view-caption">
+							<h4><span class="glyphicon glyphicon-map-marker"></span> <?php echo e($post->name); ?> </h4>  
+						</div> 
+					</div>
+					<div class="w3ls-details">   
+						<h4>Event Description</h4> 
+						<p class="agile-text"><?php echo e($post->description); ?> </p>
+						<div class="w3ls-text">
+							<h4>Event Details</h4>  
+							<p><b>Price :</b>GH$ <?php echo e($post->regular_ticket); ?> </p>
+							<p><b>VIP :</b>GH$ <?php echo e($post->vip_ticket); ?> </p>
+							<p><b>Tickets Available :</b> <?php echo e($post->number_left); ?> </p>
+							<p><b>Venue of Event :</b>  </p>
+						</div>
+					</div>
+					
+				</div>
+				<?php endforeach; ?>
+			</div>
+		</div>
+	</div> 
+	<!-- menu-js -->
+	<script src="<?php echo e(asset('js/classie.js')); ?>"></script>
+	<script src="<?php echo e(asset('js/main.js')); ?>"></script>
+	<!-- //menu-js -->
+	<!-- nicescroll-js -->
+	<script src="<?php echo e(asset('js/jquery.nicescroll.min.js')); ?>"></script> 
+	<script>
+		$(document).ready(function() {
+	  
+			var nice = $("html").niceScroll();  // The document page (body)
+		
+		
+			$("#boxscroll").niceScroll({cursorborder:"",cursorcolor:"#00F",boxzoom:true}); // First scrollable DIV
+		});
+	</script>
+	<!-- //nicescroll-js -->
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="<?php echo e(asset('js/bootstrap.js')); ?>"></script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

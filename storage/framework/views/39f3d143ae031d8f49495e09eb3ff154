@@ -9,14 +9,14 @@
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //For-Mobile-Apps-and-Meta-Tags -->
 <!-- Custom Theme files -->
-<link href="{{ asset('/css/bootstrap.css') }}" type="text/css" rel="stylesheet" media="all">
-<link href="{{ asset('/css/style.css') }}" type="text/css" rel="stylesheet" media="all">  
+<link href="<?php echo e(asset('/css/bootstrap.css')); ?>" type="text/css" rel="stylesheet" media="all">
+<link href="<?php echo e(asset('/css/style.css')); ?>" type="text/css" rel="stylesheet" media="all">  
 <!-- //Custom Theme files -->
 <!-- js -->
-<script src="{{ asset('js/jquery-2.2.3.min.js') }}"></script>
+<script src="<?php echo e(asset('js/jquery-2.2.3.min.js')); ?>"></script>
 <!-- //js -->
 <!-- pop-up-box -->
-<script src="{{ asset('js/jquery.magnific-popup.js') }}"></script>
+<script src="<?php echo e(asset('js/jquery.magnific-popup.js')); ?>"></script>
 <!--//pop-up-box -->
 <!-- web-fonts -->  
 <link href='//fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
@@ -29,12 +29,12 @@
 			<nav class="top-nav">
 				<ul class="icon-list">
 					<li class="menu-title" style="background: white;color:black">Capstone</li>
-					<li><a href="{{action('HomeController@index')}}"><i class="glyphicon glyphicon-home"></i> Home </a></li>
-					<li><a href="{{action("AboutController@index")}}"><i class="glyphicon glyphicon-info-sign"></i> About </a></li>
-					<li><a href="{{action("EventController@index")}}"><i class="glyphicon glyphicon-briefcase"></i> Events </a></li>
-					<li><a href="{{action("AgentController@index")}}"><i class="glyphicon glyphicon-eye-open"></i> Search </a></li>
-					<li><a href="{{action("GalleryController@index")}}"><i class="glyphicon glyphicon-picture"></i> Gallery</a></li>
-					<li><a href="{{action("GalleryController@index")}}"><i class="glyphicon glyphicon-thumbs-up"></i> Preference</a></li>
+					<li><a href="<?php echo e(action('HomeController@index')); ?>"><i class="glyphicon glyphicon-home"></i> Home </a></li>
+					<li><a href="<?php echo e(action("AboutController@index")); ?>"><i class="glyphicon glyphicon-info-sign"></i> About </a></li>
+					<li><a href="<?php echo e(action("EventController@index")); ?>"><i class="glyphicon glyphicon-briefcase"></i> Events </a></li>
+					<li><a href="<?php echo e(action("AgentController@index")); ?>"><i class="glyphicon glyphicon-eye-open"></i> Search </a></li>
+					<li><a href="<?php echo e(action("GalleryController@index")); ?>"><i class="glyphicon glyphicon-picture"></i> Gallery</a></li>
+					<li><a href="<?php echo e(action("GalleryController@index")); ?>"><i class="glyphicon glyphicon-thumbs-up"></i> Preference</a></li>
 					<li><a href="contact.html"><i class="glyphicon glyphicon-envelope"></i> Contact </a></li>
 				</ul>
 			</nav>
@@ -46,25 +46,25 @@
 					<button class="menu-button" id="open-button">O</button>
 				</div>
 				<div class="logo">
-					<h2><a href="{{action('HomeController@index')}}">H</a></h2>
+					<h2><a href="<?php echo e(action('HomeController@index')); ?>">H</a></h2>
 				</div>
 				<div class="login">
-					<a href="{{action('IndexController@index')}}" class="sign-in popup-top-anim"><span class="glyphicon glyphicon-user"></span></a> 
+					<a href="<?php echo e(action('IndexController@index')); ?>" class="sign-in popup-top-anim"><span class="glyphicon glyphicon-user"></span></a> 
 					
 				</div> 
 				<div class="clearfix"> </div>
 			</div>
 		</div>
 	</div>
-	@yield('content')
+	<?php echo $__env->yieldContent('content'); ?>
 
 	<!-- <div class="w3agile footer"> 
 					<div class="footer-nav">
 						<ul>  
-							<li><a href="{{action("HomeController@index")}}"> Home </a></li>
-							<li><a href="{{action("AboutController@index")}}"> About </a> </li>
-							<li><a href="{{action("EventController@index")}}"> Events </a></li>
-							<li><a href="{{action("GalleryController@index")}}"> Gallery</a></li>
+							<li><a href="<?php echo e(action("HomeController@index")); ?>"> Home </a></li>
+							<li><a href="<?php echo e(action("AboutController@index")); ?>"> About </a> </li>
+							<li><a href="<?php echo e(action("EventController@index")); ?>"> Events </a></li>
+							<li><a href="<?php echo e(action("GalleryController@index")); ?>"> Gallery</a></li>
 							<li><a href="contact.html"> Contact </a></li>
 						</ul> 
 					</div> 

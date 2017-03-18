@@ -2,7 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use Session;
 use Illuminate\Http\Request;
 
 class AboutController extends Controller {
@@ -25,6 +25,9 @@ class AboutController extends Controller {
 	public function create()
 	{
 		//
+		$value = Session::get('key', 'phoneNumber');
+
+		echo $value;
 	}
 
 	/**

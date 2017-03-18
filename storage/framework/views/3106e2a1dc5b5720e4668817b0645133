@@ -1,6 +1,4 @@
-@extends('app')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 			<!-- <div class="content"> -->
 				<!-- banner -->
 				<div class="banner about-banner"> 
@@ -10,13 +8,13 @@
 				</div>
 				<!-- //banner -->
 				<!-- properties --> 
-				@foreach($events as $post)
+				<?php foreach($events as $post): ?>
 				<div class="w3agile properties">   
 					<div class="properties-img properties-img-single">
 						<img class="banner-img2">
-						<form class="form-horizontal" method="post" action="{{ action('SingleController@show') }}">
+						<form class="form-horizontal" method="post" action="<?php echo e(action('SingleController@show')); ?>">
 						<div class="view-caption">
-							<h4><span class="glyphicon glyphicon-map-marker"></span> {{$post->name}} </h4>  
+							<h4><span class="glyphicon glyphicon-map-marker"></span> <?php echo e($post->name); ?> </h4>  
 						</div> 
 					</div>
 					<div class="w3ls-details">   
@@ -26,14 +24,15 @@
 							
 							<h4>Event Description</h4> 
 
-    						<p class="agile-text">{{$post->description}} </p>
+    						<p class="agile-text"><?php echo e($post->description); ?> </p>
 							
 							<div class="form-group">
 							<label class="col-md-4 control-label">Ticket Prices</label>
 							<div class="col-md-6">
-								<input type="text" name="eventName" id="eventName" value="{{$post->name}}" style="display: none">
-								<input name="ticket" id="ticket" type="radio" value="{{$post->regular_ticket}}">Regular @ GH$  {{$post->regular_ticket}}&nbsp;
-							    <input name="ticket" id="ticket" type="radio" value="{{$post->vip_ticket}}">VIP @ GH$ {{$post->vip_ticket}}
+								<input type="text" name="eventName" id="eventName" value="<?php echo e($post->name); ?>" style="display: none">
+								<input name="ticket" id="ticket" type="radio" value="<?php echo e($post->regular_ticket); ?>">Regular @ GH$  <?php echo e($post->regular_ticket); ?>&nbsp;
+							    <input name="ticket" id="ticket" type="radio" value="<?php echo e($post->vip_ticket); ?>">VIP @ GH$ <?php echo e($post->vip_ticket); ?>
+
 							</div>
 						</div>
 							
@@ -57,7 +56,8 @@
 
 							<div class="form-group">
 							<label class="col-md-4 control-label">Tickets Available: </label>
-							 {{$post->number_left}}
+							 <?php echo e($post->number_left); ?>
+
 							</div>
 
 							<div class="form-group" style="display:none;" id="mobile" >
@@ -96,23 +96,23 @@
 							<input data-provide="typeahead" style="width: 50%" data-items="2" id="phone" name="phone" type="number" class="span2 search-query" placeholder="MM/YY" style="width: auto">
 
 							</div>
-							  <input type="hidden" name="_token" value="{{ csrf_token() }}">
+							  <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
 							<button class="btn btn btn-info active" role="button" aria-pressed="true" style="width: auto">Buy</button>
 							</form>
 						</div>
 					</div>
 					
 				</div>
-				@endforeach
+				<?php endforeach; ?>
 			</div>
 		</div>
 <!-- 	</div>  -->
 	<!-- menu-js -->
-	<script src="{{ asset('js/classie.js') }}"></script>
-	<script src="{{ asset('js/main.js') }}"></script>
+	<script src="<?php echo e(asset('js/classie.js')); ?>"></script>
+	<script src="<?php echo e(asset('js/main.js')); ?>"></script>
 	<!-- //menu-js -->
 	<!-- nicescroll-js -->
-	<script src="{{ asset('js/jquery.nicescroll.min.js') }}"></script> 
+	<script src="<?php echo e(asset('js/jquery.nicescroll.min.js')); ?>"></script> 
 	<script>
 		function showCard(name) {
 			if (name == "card"){
@@ -128,5 +128,6 @@
 	<!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="{{ asset('js/bootstrap.js') }}"></script>
-@endsection
+    <script src="<?php echo e(asset('js/bootstrap.js')); ?>"></script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

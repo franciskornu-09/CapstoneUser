@@ -1,6 +1,4 @@
-@extends('app')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 		<!-- 	<div class="content"> -->
 				<!-- banner -->
 				<div class="banner">
@@ -46,7 +44,7 @@
 					<script src="js/custom.js"></script>
 				</div>
 				<!-- //banner -->
-				<!-- welcome --> 
+				<!-- welcome -->
 				<div class="welcome">
 					   <div class="welcome-info">
 						<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
@@ -55,24 +53,25 @@
 								<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
 									<div class="tabcontent-grids">
 									<center>
-										<table>
-										<tr>
-										<td>
-										 <a href="{{action('PrefernceController@create')}}" class="btn btn btn-info btn-lg active" role="button" aria-pressed="true" style="width: 100%;"><i class="glyphicon glyphicon-folder-open"></i> <br>User Tab</a>
-										 </td>
-										 <td>
-										 <a href="{{action('MessageController@index')}}" class="btn btn btn-default btn-lg active" role="button" aria-pressed="true" style="width: 100%;"><i class="glyphicon glyphicon-comment"></i> <br>Message</a>
-										 </td>
-										 </tr>
-										 <tr>
-										 <td>
-										 <a href="#" class="btn btn btn-default btn-lg active" role="button" aria-pressed="true" style="width: 100%;"><i class="glyphicon glyphicon-time"></i> <br>History</a>
-										 </td>
-										 <td>
-										 <a href="{{action('GalleryController@show')}}" class="btn btn btn-info btn-lg active" role="button" aria-pressed="true" style="width: 100%;"><i class="glyphicon glyphicon-barcode"></i> <br>Barcode</a>
-										 </td>
-										 </tr>
-										 </table>
+									<ul class="list-group">
+									<li class="list-group-item" style="color: white; background: #00ccff">Send Message</li>
+									</ul>
+									
+									<div class="row">
+									<?php foreach($message as $post): ?>
+										<?php if($post->choices === 'no'): ?>
+											<a href="<?php echo route('show', ['id'=>$post->id]); ?>" class="btn btn-secondary" type="button" style="width: 100%;background: #00ccff">
+												 <span style="color: white"><?php echo e($post->date); ?></span> &nbsp; <?php echo e($post->topic); ?> <i class="glyphicon glyphicon-info-sign" style="color: white"></i>
+											</a><br>
+										<?php else: ?>
+										<a href="<?php echo route('show', ['id'=>$post->id]); ?>" class="btn btn-secondary" type="button" style="width: 100%;background: #00ccff;color: black">
+												 <span><?php echo e($post->date); ?></span> &nbsp; <?php echo e($post->topic); ?>
+
+											</a><br>
+										<?php endif; ?>
+									<?php endforeach; ?>
+									 
+										</div>
 										 </center>
 										<div>........................</div>
 										<div id="found"></div>
@@ -83,16 +82,26 @@
 				</div> 
 				</div> 
 			<!-- </div> -->
-	<!-- menu-js -->
-	<script src="js/classie.js"></script>
-	<script src="js/main.js"></script>
+<script src="<?php echo e(asset('js/custom.js')); ?>"></script>
+	<script src="<?php echo e(asset('js/classie.js')); ?>"></script>
+	<script src="<?php echo e(asset('js/main.js')); ?>"></script>
 	<!-- //menu-js -->
 	<!-- nice scroll-js -->
-	<script src="js/jquery.nicescroll.min.js"></script> 
-	
+	<script src="<?php echo e(asset('js/jquery.nicescroll.min.js')); ?>"></script>
+	<script>		
+		$(document).ready(function() {
+	  
+			var nice = $("html").niceScroll();  // The document page (body)
+		
+			$("#boxscroll").niceScroll({cursorborder:"",cursorcolor:"#00F",boxzoom:true}); // First scrollable DIV
+		});
+	</script>
 	<!-- //nice scroll-js -->
 	<!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/bootstrap.js"></script>
-@endsection
+   	<script src="<?php echo e(asset('js/bootstrap')); ?>"></script>
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

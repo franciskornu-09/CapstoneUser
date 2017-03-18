@@ -1,0 +1,59 @@
+<?php $__env->startSection('content'); ?>
+			<!-- <div class="content"> -->
+				<!-- banner -->
+				<div class="welcome">
+					   <div class="welcome-info">
+						<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+							<div class="clearfix"> </div>
+							<div id="myTabContent" class="tab-content">
+								<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+									<div class="tabcontent-grids" style="height: 325px">
+									<center>
+									<h3 style="color: #00ccff"><u>User Profile</u></h3><br>	
+
+										
+										<div class="row" style="background: white;height:50%">
+									<?php foreach($details as $code): ?>
+									<div class="card">
+									  <div class="card-header">
+									    <i>#######</i>
+									  </div>
+									  <div class="card-block">
+									    <blockquote class="card-blockquote">
+									      <p>Name: <?php echo e($code->name); ?></p>
+									      <p>Phone:<?php echo e($code->phone); ?></p>
+									      <p>Email:<?php echo e($code->email); ?></p><br>
+									      <footer style="color: #00ccff">Retrieved <?php echo e($code->date); ?></footer>
+									    </blockquote>
+									  </div>
+									</div>
+							     
+									<span style="float: left"><a href="<?php echo e(action('MessageController@index')); ?>" style="color: black"><i class="glyphicon glyphicon-chevron-left"></i> Back</a></span>
+
+									<span style="float: right;"><a href="<?php echo route('editProfile', ['id'=>$code->id]); ?>" style="color: black"><i class="glyphicon glyphicon-edit"></i> Edit</a></span>
+									
+										</div>
+										<?php endforeach; ?>									
+									  </center>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+		
+		
+<!-- 	</div>  -->
+	<!-- menu-js -->
+	<script src="<?php echo e(asset('js/classie.js')); ?>"></script>
+	<script src="<?php echo e(asset('js/main.js')); ?>"></script>
+	<!-- //menu-js -->
+	<!-- nicescroll-js -->
+	<script src="<?php echo e(asset('js/jquery.nicescroll.min.js')); ?>"></script> 
+	<!-- //nicescroll-js -->
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="<?php echo e(asset('js/bootstrap.js')); ?>"></script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

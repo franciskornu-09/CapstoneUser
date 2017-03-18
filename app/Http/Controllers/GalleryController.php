@@ -2,9 +2,9 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-
+use Auth;
 class GalleryController extends Controller {
 
 	/**
@@ -32,9 +32,11 @@ class GalleryController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store($id)
 	{
 		//
+		$events = DB::select( DB::raw("SELECT qrcode from qrcodes where id ='$id'"));
+		return view('code',compact('events'));
 	}
 
 	/**
@@ -43,9 +45,14 @@ class GalleryController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show()
 	{
 		//
+		$id = Auth::user()->phone;
+		$events = DB::select( DB::raw("SELECT * from qrcodes where user ='$id'"));
+		//return $events;
+		
+		 return view('qrDisplay',compact('events'));
 	}
 
 	/**

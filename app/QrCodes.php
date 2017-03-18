@@ -2,10 +2,10 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class EventFolder extends Model {
+class QrCodes extends Model {
 
 	//
+	protected $table = 'qrcodes';
 
-	protected $table = 'transaction';
 
 }

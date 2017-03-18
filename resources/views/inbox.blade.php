@@ -55,17 +55,24 @@
 								<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
 									<div class="tabcontent-grids">
 									<center>
-										@if (count($message) === 1)
-										<ul class="list-group">
-										  <li class="list-group-item" style="color: black">Send Message</li>
-										  <li class="list-group-item" style="color: black">Inbox<span class="badge">new</span></li>
-										</ul>
+									<ul class="list-group">
+									<li class="list-group-item" style="color: white; background: #00ccff">Send Message</li>
+									</ul>
+									
+									<div class="row">
+									@foreach($message as $post)
+										@if ($post->choices === 'no')
+											<a href="{!! route('show', ['id'=>$post->id]) !!}" class="btn btn-secondary" type="button" style="width: 100%;background: #00ccff">
+												 <span style="color: white">{{$post->date}}</span> &nbsp; {{$post->topic}} <i class="glyphicon glyphicon-info-sign" style="color: white"></i>
+											</a><br>
 										@else
-										<ul class="list-group">
-										  <li class="list-group-item" style="color: black">Send Message</li>
-										  <li class="list-group-item" style="color: black">Inbox</li>
-										</ul>
+										<a href="{!! route('show', ['id'=>$post->id]) !!}" class="btn btn-secondary" type="button" style="width: 100%;background: #00ccff;color: black">
+												 <span>{{$post->date}}</span> &nbsp; {{$post->topic}}
+											</a><br>
 										@endif
+									@endforeach
+									 
+										</div>
 										 </center>
 										<div>........................</div>
 										<div id="found"></div>
@@ -76,12 +83,12 @@
 				</div> 
 				</div> 
 			<!-- </div> -->
-	<!-- menu-js -->
-	<script src="js/classie.js"></script>
-	<script src="js/main.js"></script>
+<script src="{{ asset('js/custom.js') }}"></script>
+	<script src="{{ asset('js/classie.js') }}"></script>
+	<script src="{{ asset('js/main.js') }}"></script>
 	<!-- //menu-js -->
 	<!-- nice scroll-js -->
-	<script src="js/jquery.nicescroll.min.js"></script> 
+	<script src="{{ asset('js/jquery.nicescroll.min.js') }}"></script>
 	<script>		
 		$(document).ready(function() {
 	  
@@ -94,5 +101,6 @@
 	<!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/bootstrap.js"></script>
+   	<script src="{{ asset('js/bootstrap') }}"></script>
 @endsection
+

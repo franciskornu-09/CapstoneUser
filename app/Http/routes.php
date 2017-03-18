@@ -33,6 +33,8 @@ Route::get('pull','PullController@index');
 
 Route::get('signup','PrefernceController@index');
 
+Route::get('pro','PrefernceController@create');
+
 Route::get('first','ContactController@index');
 
 Route::get('single','SingleController@index');
@@ -47,6 +49,10 @@ Route::get('provideXml','MapController@show');
 
 Route::get('inbox','MessageController@index');
 
+Route::post('message','SingleController@show');
+
+Route::get('testing','AboutController@create');
+
 Route::filter('auth', function()
 {
     if( ! Session::get('id')){
@@ -55,8 +61,33 @@ Route::filter('auth', function()
 });
 
 $router->get('/show/{id}',[
-    'uses' => 'PrefernceController@show',
+    'uses' => 'PrefernceController@ ',
     'as'   => 'switch'
+]);
+
+$router->get('/code/{id}',[
+    'uses' => 'GalleryController@store',
+    'as'   => 'codeDisplay'
+]);
+
+$router->get('/edit/{id}',[
+    'uses' => 'PrefernceController@edit',
+    'as'   => 'editProfile'
+]);
+
+$router->get('/qrcode/{id}',[
+    'uses' => 'GalleryController@show',
+    'as'   => 'qr'
+]);
+
+$router->get('/events',[
+    'uses' => 'EventController@index',
+    'as'   => 'qr2'
+]);
+
+$router->get('/dispaly/{id}',[
+    'uses' => 'MessageController@show',
+    'as'   => 'show'
 ]);
 
 Route::controllers([
@@ -64,8 +95,9 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-// Event::listen('auth.login', function()
-// {	
-// 	Session::get('email');
-//     Session::set('id', '');
-// });	
+// Route::post('/update/{{id}}',[
+//     'uses' => 'TableController@update', 
+//     'as' => 'send'
+// ]);
+
+

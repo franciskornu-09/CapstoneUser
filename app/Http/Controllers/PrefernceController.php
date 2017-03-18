@@ -36,6 +36,9 @@ class PrefernceController extends Controller {
 	public function create()
 	{
 		//
+		$db = Auth::user()->id;
+		$details = DB::select( DB::raw("SELECT *,NOW() as date from users where id=$db"));
+		return view('profile',compact('details'));
 	}
 
 	/**
@@ -72,6 +75,9 @@ class PrefernceController extends Controller {
 	public function edit($id)
 	{
 		//
+		$result = DB::select( DB::raw("SELECT * from users where id ='$id'"));
+		
+		return view('editPro',compact('result'));
 	}
 
 	/**

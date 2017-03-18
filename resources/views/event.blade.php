@@ -14,6 +14,7 @@
 					<h3 class="w3ls-title">Events</h3> 
 					<p class="w3-text">This page is to provide users with the available events happening around the country.</p>
 					@foreach($users as $post)
+
 					<div class="properties-w3lsrow"> 
 						<div class="properties-bottom">
 							<div class="properties-img">
@@ -27,13 +28,13 @@
 								</div>
 							</div>
 							<div class="w3ls-text">
-								<h5><span class="glyphicon glyphicon-map-marker"></span><a href="{{action("MapController@index")}}">Vendors</a></h5><br>
+								<h5><span class="glyphicon glyphicon-map-marker"></span><a href="{{action('MapController@index')}}">vendor locations</a></h5><br>
 								<!-- <h6>Vip: {{$post->vip_ticket}}</h6>  -->
 								<p>Regular: {{$post->regular_ticket}}</p>
 								<p><b>Tickets Left :</b> {{$post->number_left}} </p>
-								<p style="float: right"><a onClick="alert('{{$post->description}}')">More</a></p>
-								
-							</div>
+								<!-- <p style="float: right"><a onClick="alert('{{$post->description}}')">More</a></p> -->
+								<p><b>Description: </b>{{$post->description}}</p>
+								</div>
 							
 						</div>
 						</div>
@@ -47,15 +48,6 @@
 	<!-- //menu-js -->
 	<!-- nicescroll-js -->
 	<script src="{{ asset('js/jquery.nicescroll.min.js') }}"></script> 
-	<script>
-		$(document).ready(function() {
-	  
-			var nice = $("html").niceScroll();  // The document page (body)
-		
-		
-			$("#boxscroll").niceScroll({cursorborder:"",cursorcolor:"#00F",boxzoom:true}); // First scrollable DIV
-		});
-	</script>
 	<!-- //nicescroll-js -->
 	<!-- Bootstrap core JavaScript
     ================================================== -->

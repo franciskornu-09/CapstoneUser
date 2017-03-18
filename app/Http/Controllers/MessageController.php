@@ -18,19 +18,8 @@ class MessageController extends Controller {
 		$result=collect();
 		$message=collect();
 		$id = Auth::user()->id;
-		// $result = DB::select( DB::raw("SELECT messages,created_at from message where users_id ='$id' "));
-		$inbox = DB::select('select created_at from message where users_id = ?', [$id]);
-		foreach ($inbox as $key) {
-			$result[] = $key->created_at;
-		}
-
-		$map = count($result);
-		for ($i=0; $i < $map ; $i++) { 
-			$new = $result[$i];
-			if((time()-(60*60*24)) > strtotime($new)){
-				$message[$i]=$result[$i];
-			}
-		}
+	    $message = DB::select( DB::raw("SELECT id,topic,messages,choices,created_at as date from msg_table where users_id =$id order by date DESC"));
+		// $message = DB::select('select topic,messages,choices,created_at as date from msg_table where users_id = ?', [$id]);
 		return view('inbox',compact('message'));
 	}
 
@@ -63,6 +52,10 @@ class MessageController extends Controller {
 	public function show($id)
 	{
 		//
+		$user = Auth::user()->id;
+		$events = DB::select( DB::raw("update msg_table set choices = 'yes' where id=$id"));
+		$message = DB::select( DB::raw("select topic,messages,choices,created_at as date from msg_table where users_id = $user and id = '$id'"));
+		return view('display',compact('message'));
 	}
 
 	/**

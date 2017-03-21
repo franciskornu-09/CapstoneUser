@@ -61,8 +61,13 @@ Route::filter('auth', function()
 });
 
 $router->get('/show/{id}',[
-    'uses' => 'PrefernceController@ ',
+    'uses' => 'PrefernceController@show',
     'as'   => 'switch'
+]);
+
+$router->get('/maps/{id}',[
+    'uses' => 'MapController@show',
+    'as'   => 'mapLoc'
 ]);
 
 $router->get('/code/{id}',[

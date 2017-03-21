@@ -52,7 +52,7 @@
         title: value.name,
         click: function(e) {
           alert('This is '+value.name+', a vendor of event tickets\n'+'Address: '+value.address+'\n'+
-            'The number of tickets left: '+ value.number_left);
+            'The number of tickets left: '+ value.quantity);
         }
       });
    });

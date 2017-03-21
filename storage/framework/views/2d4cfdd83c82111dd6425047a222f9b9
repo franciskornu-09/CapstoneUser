@@ -26,7 +26,7 @@
 								</div>
 							</div>
 							<div class="w3ls-text">
-								<h5><span class="glyphicon glyphicon-map-marker"></span><a href="<?php echo e(action('MapController@index')); ?>">vendor locations</a></h5><br>
+								<h5><span class="glyphicon glyphicon-map-marker"></span><a href="<?php echo route ('mapLoc', ['id'=>$post->name]); ?>">vendor locations</a></h5><br>
 								<!-- <h6>Vip: <?php echo e($post->vip_ticket); ?></h6>  -->
 								<p>Regular: <?php echo e($post->regular_ticket); ?></p>
 								<p><b>Tickets Left :</b> <?php echo e($post->number_left); ?> </p>

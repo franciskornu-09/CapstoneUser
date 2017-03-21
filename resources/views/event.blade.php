@@ -28,7 +28,7 @@
 								</div>
 							</div>
 							<div class="w3ls-text">
-								<h5><span class="glyphicon glyphicon-map-marker"></span><a href="{{action('MapController@index')}}">vendor locations</a></h5><br>
+								<h5><span class="glyphicon glyphicon-map-marker"></span><a href="{!! route ('mapLoc', ['id'=>$post->name]) !!}">vendor locations</a></h5><br>
 								<!-- <h6>Vip: {{$post->vip_ticket}}</h6>  -->
 								<p>Regular: {{$post->regular_ticket}}</p>
 								<p><b>Tickets Left :</b> {{$post->number_left}} </p>

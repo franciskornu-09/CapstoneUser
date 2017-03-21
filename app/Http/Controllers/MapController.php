@@ -15,10 +15,8 @@ class MapController extends Controller {
 	 */
 	public function index()
 	{
-		 $locations = DB::table('markers')->get();
-		 // $locations = DB::select( DB::raw("SELECT *,number_left,event_folders.name as eName FROM markers,event_folders WHERE identify = 'New Play' and event_folders.name='New Play'") );
-    	return view('map',compact('locations'));
-	}
+		 
+	}	
 
 	/**
 	 * Show the form for creating a new resource.
@@ -47,27 +45,12 @@ class MapController extends Controller {
 	 * @param  Request $reqest
 	 * @return Response
 	 */
-	public function show(Request $request)
+	public function show($id)
 	{
-		//
-		// $dom = new \DOMDocument();
-		// $node = $dom->createElement("markers");
-		// $parnode = $dom->appendChild($node);
-
-		// $users = DB::table('markers')->get();
-
-		// header("Content-type: text/xml");
-
-		// foreach ($users as $marker) {
-		// 	 $node = $dom->createElement("marker");
-  // 			 $newnode = $parnode->appendChild($node);
-		// 	 $newnode->setAttribute("name",$marker->name);
-		// 	 $newnode->setAttribute("address", $marker->address);
-		// 	 $newnode->setAttribute("lat", $marker->lat);
-		// 	 $newnode->setAttribute("lng", $marker->lng);
-		// 	 $newnode->setAttribute("type", $marker->type);
-		// }
-		// echo $dom->saveXML();
+		// $locations = DB::table('markers')->get();
+		 $locations = DB::select( DB::raw("SELECT * FROM markers where name = '$id'"));
+    	 return view('map',compact('locations'));
+		 // return $locations;
 	}
 
 	/**

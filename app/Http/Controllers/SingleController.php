@@ -77,11 +77,26 @@ class SingleController extends Controller {
 
 		$message="You have made payment of GH$ $totalAmount for the $name event. Please make it a point to attend. You would not regret it. Feel free to share the news with all your loved ones.";
 
-		return redirect()->route('qr2');
+		$message = preg_replace('/\s+/', '%20', $message);
 		
 		
 		// "http://api.deywuro.com/bulksms/?username=francisK&password=genKay0450&type=0&dlr=1&destination=$phoneNumber&source=fd&message=";
+		$ch = curl_init();
 
+		curl_setopt($ch, CURLOPT_URL,"http://api.deywuro.com/bulksms/?username=francisK&password=genKay0450&type=0&dlr=1&destination=$phoneNumber&source=fd&message=$message");
+		curl_setopt($ch, CURLOPT_POST, 1);
+		// in real life you should use something like:
+		 curl_setopt($ch, CURLOPT_POSTFIELDS, 
+		          http_build_query(array('postvar1' => 'value1')));
+
+		// receive server response ...
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+		$server_output = curl_exec ($ch);
+
+		curl_close ($ch);
+
+	return redirect()->route('qr2');
 	}
 
 	/**

@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('content')
-			<!-- <div class="content"> -->
+			<!-- This page displays tabs that would lead the user to a page to see the QR code -->
 				<!-- banner -->
 				<div class="welcome">
 					   <div class="welcome-info">
@@ -27,9 +27,6 @@
 						</div>
 					</div>
 				</div>
-		
-		
-<!-- 	</div>  -->
 	<!-- menu-js -->
 	<script src="{{ asset('js/classie.js') }}"></script>
 	<script src="{{ asset('js/main.js') }}"></script>

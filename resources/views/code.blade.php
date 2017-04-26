@@ -1,8 +1,7 @@
 @extends('app')
 
 @section('content')
-			<!-- <div class="content"> -->
-				<!-- banner -->
+			<!-- This page is to generate a QR code that code be scanned at the entrance of event locations to represent a ticket. -->
 				<div class="welcome">
 					   <div class="welcome-info">
 						<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
@@ -23,9 +22,6 @@
 						</div>
 					</div>
 				</div>
-		
-		
-<!-- 	</div>  -->
 	<!-- menu-js -->
 	<script src="{{ asset('js/classie.js') }}"></script>
 	<script src="{{ asset('js/main.js') }}"></script>

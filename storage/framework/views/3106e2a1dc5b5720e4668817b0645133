@@ -1,5 +1,5 @@
 <?php $__env->startSection('content'); ?>
-			<!-- <div class="content"> -->
+	<!-- This page displays more information about the event and allows the user make payment for the ticket using various options -->
 				<!-- banner -->
 				<div class="banner about-banner"> 
 					<div class="banner-img">  
@@ -106,7 +106,6 @@
 				<?php endforeach; ?>
 			</div>
 		</div>
-<!-- 	</div>  -->
 	<!-- menu-js -->
 	<script src="<?php echo e(asset('js/classie.js')); ?>"></script>
 	<script src="<?php echo e(asset('js/main.js')); ?>"></script>

@@ -1,11 +1,16 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
 <!DOCTYPE html>
 <html>
 <head>
-<title>Capstone</title> 
+<title>ePublisher</title> 
 <!-- For-Mobile-Apps-and-Meta-Tags -->
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Fortune Estates Widget Responsive, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, SmartPhone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //For-Mobile-Apps-and-Meta-Tags -->
 <!-- Custom Theme files -->
@@ -28,14 +33,12 @@
 		<div class="menu-wrap" id="style-1" style="background: black">  
 			<nav class="top-nav">
 				<ul class="icon-list">
-					<li class="menu-title" style="background: white;color:black">Capstone</li>
+					<li class="menu-title" style="background: white;color:black">ePublisher</li>
 					<li><a href="{{action('HomeController@index')}}"><i class="glyphicon glyphicon-home"></i> Home </a></li>
-					<li><a href="{{action("AboutController@index")}}"><i class="glyphicon glyphicon-info-sign"></i> About </a></li>
-					<li><a href="{{action("EventController@index")}}"><i class="glyphicon glyphicon-briefcase"></i> Events </a></li>
-					<li><a href="{{action("AgentController@index")}}"><i class="glyphicon glyphicon-eye-open"></i> Search </a></li>
-					<li><a href="{{action("GalleryController@index")}}"><i class="glyphicon glyphicon-picture"></i> Gallery</a></li>
-					<li><a href="{{action("GalleryController@index")}}"><i class="glyphicon glyphicon-thumbs-up"></i> Preference</a></li>
-					<li><a href="contact.html"><i class="glyphicon glyphicon-envelope"></i> Contact </a></li>
+					<li><a href="{{action('EventController@index')}}"><i class="glyphicon glyphicon-briefcase"></i> Events </a></li>
+					<li><a href="{{action('AgentController@index')}}"><i class="glyphicon glyphicon-eye-open"></i> Search </a></li>
+					<li><a href="{{action('GalleryController@index')}}"><i class="glyphicon glyphicon-picture"></i> Gallery</a></li>
+					<li><a href="{{action('GalleryController@index')}}"><i class="glyphicon glyphicon-thumbs-up"></i> Preference</a></li>
 				</ul>
 			</nav>
 			<button class="close-button" id="close-button">C</button>
@@ -57,18 +60,6 @@
 		</div>
 	</div>
 	@yield('content')
-
-	<!-- <div class="w3agile footer"> 
-					<div class="footer-nav">
-						<ul>  
-							<li><a href="{{action("HomeController@index")}}"> Home </a></li>
-							<li><a href="{{action("AboutController@index")}}"> About </a> </li>
-							<li><a href="{{action("EventController@index")}}"> Events </a></li>
-							<li><a href="{{action("GalleryController@index")}}"> Gallery</a></li>
-							<li><a href="contact.html"> Contact </a></li>
-						</ul> 
-					</div> 
-				</div> --> 
 	
 </body>
 </html>

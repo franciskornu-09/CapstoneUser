@@ -76,34 +76,7 @@
 					<!--  light box js -->
 					<script src="js/lightbox-plus-jquery.min.js"> </script> 
 					<!-- //light box js-->  
-				</div>
-				<!-- //gallery -->  
-				<!-- brands -->
-				<!-- <div class="w3agile brands"> 
-					<h3 class="w3ls-title">Our Clients</h3> 
-					<div class="brands-info">
-						<div class="brand-grids">
-							<a href="#"><img src="images/b1.jpg" alt=""/></a>
-						</div>
-						<div class="brand-grids">
-							<a href="#"><img src="images/b2.jpg" alt=""/></a>
-						</div>
-						<div class="brand-grids">
-							<a href="#"><img src="images/b3.jpg" alt=""/></a>
-						</div>
-						<div class="brand-grids">
-							<a href="#"><img src="images/b4.jpg" alt=""/></a>
-						</div>
-						<div class="brand-grids">
-							<a href="#"><img src="images/b5.jpg" alt=""/></a>
-						</div>
-						<div class="brand-grids">
-							<a href="#"><img src="images/b6.jpg" alt=""/></a>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-				</div> -->
-				 
+				</div>				 
 			</div>
 		 
 	<!-- menu-js -->

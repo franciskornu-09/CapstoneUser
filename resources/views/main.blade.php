@@ -1,7 +1,6 @@
 @extends('app')
 
 @section('content')
-		<!-- 	<div class="content"> -->
 				<!-- banner -->
 				<div class="banner">
 					<div id="kb" class="carousel kb_elastic animate_text kb_wrapper" data-ride="carousel" data-interval="6000" data-pause="hover">
@@ -58,16 +57,20 @@
 										<table>
 										<tr>
 										<td>
+										<!-- A button to send the user to a page to view personal details -->
 										 <a href="{{action('PrefernceController@create')}}" class="btn btn btn-info btn-lg active" role="button" aria-pressed="true" style="width: 100%;"><i class="glyphicon glyphicon-folder-open"></i> <br>User Tab</a>
 										 </td>
+										 <!-- A button to send the user to a page to view messages sent by the administrator -->
 										 <td>
 										 <a href="{{action('MessageController@index')}}" class="btn btn btn-default btn-lg active" role="button" aria-pressed="true" style="width: 100%;"><i class="glyphicon glyphicon-comment"></i> <br>Message</a>
 										 </td>
 										 </tr>
 										 <tr>
+										 <!-- A button to send user to a page where he/she can send a report to the administrator of the application -->
 										 <td>
-										 <a href="#" class="btn btn btn-default btn-lg active" role="button" aria-pressed="true" style="width: 100%;"><i class="glyphicon glyphicon-time"></i> <br>History</a>
+										 <a href="{{action('PullController@create')}}" class="btn btn btn-default btn-lg active" role="button" aria-pressed="true" style="width: 100%;"><i class="glyphicon glyphicon-alert"></i> <br>Issues</a>
 										 </td>
+										 <!-- A button to send user to a page to view etickets in the form of QR codes -->
 										 <td>
 										 <a href="{{action('GalleryController@show')}}" class="btn btn btn-info btn-lg active" role="button" aria-pressed="true" style="width: 100%;"><i class="glyphicon glyphicon-barcode"></i> <br>Barcode</a>
 										 </td>
@@ -81,8 +84,7 @@
 							</div>  
 					</div>  	
 				</div> 
-				</div> 
-			<!-- </div> -->
+		    </div> 
 	<!-- menu-js -->
 	<script src="js/classie.js"></script>
 	<script src="js/main.js"></script>

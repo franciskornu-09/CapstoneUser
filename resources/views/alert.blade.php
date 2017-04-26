@@ -1,66 +1,37 @@
 @extends('app')
 
 @section('content')
-<!-- This page displays a form to allow a user register.-->
+<!-- This page has the form the user can fil to send the administrator a message
+	 Any information is redirected to the PullController for processing -->
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-info">
-				<div class="panel-heading">Register</div>
+				<div class="panel-heading">Send Message</div>
 				<div class="panel-body">
-					@if (count($errors) > 0)
-						<div class="alert alert-danger">
-							<strong>Whoops!</strong> There were some problems with your input.<br><br>
-							<ul>
-								@foreach ($errors->all() as $error)
-									<li>{{ $error }}</li>
-								@endforeach
-							</ul>
-						</div>
-					@endif
-
-					<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}">
+					<form class="form-horizontal" role="form" method="POST" action="{{ action('PullController@store') }}">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
-
 						<div class="form-group">
-							<label class="col-md-4 control-label">Name</label>
+							<label class="col-md-4 control-label">Topic</label>
 							<div class="col-md-6">
-								<input type="text" class="form-control" name="name" value="{{ old('name') }}">
+								<input type="text" class="form-control" name="topic">
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
+							<label class="col-md-4 control-label">Message</label>
 							<div class="col-md-6">
-								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
+								<textarea class="form-control" name="message" rows="3">
+									
+								</textarea>
 							</div>
 						</div>
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">Phone Number</label>
-							<div class="col-md-6">
-								<input type="number" class="form-control" name="phone" value="{{ old('phone') }}">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label class="col-md-4 control-label">Password</label>
-							<div class="col-md-6">
-								<input type="password" class="form-control" name="password">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label class="col-md-4 control-label">Confirm Password</label>
-							<div class="col-md-6">
-								<input type="password" class="form-control" name="password_confirmation">
-							</div>
-						</div>
-
+						
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
 								<button type="submit" class="btn btn-primary">
-									Register
+									Send
 								</button>
 							</div>
 						</div>

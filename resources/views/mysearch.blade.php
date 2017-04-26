@@ -1,8 +1,7 @@
 @extends('app')
 
 @section('content')
-
-<!-- <div class="content"> -->
+<!-- This is the page that displays the information searched by the user. At the bottom of the page is another search box and a button to allow the user search for another event by entering a key word -->
 				<!-- banner -->
 				<div class="banner about-banner"> 
 					<div class="banner-img">  
@@ -48,23 +47,12 @@
 					</form>
 					</center>
 					</div>
-					
-		<!-- 	</div> -->
 	<!-- menu-js -->
 	<script src="{{ asset('js/classie.js') }}"></script>
 	<script src="{{ asset('js/main.js') }}"></script>
 	<!-- //menu-js -->
 	<!-- nicescroll-js -->
 	<script src="{{ asset('js/jquery.nicescroll.min.js') }}"></script> 
-	<script>
-		$(document).ready(function() {
-	  
-			var nice = $("html").niceScroll();  // The document page (body)
-		
-		
-			$("#boxscroll").niceScroll({cursorborder:"",cursorcolor:"#00F",boxzoom:true}); // First scrollable DIV
-		});
-	</script>
 	<!-- //nicescroll-js -->
 	<!-- Bootstrap core JavaScript
     ================================================== -->

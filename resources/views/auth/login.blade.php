@@ -1,6 +1,7 @@
 @extends('master')
 
 @section('content')
+<!-- This page displays a form to allow a user log into the application to see other elements that non subscribers would not see -->
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-5 col-md-offset-2">
@@ -8,13 +9,10 @@
 					<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}" style="margin-top: 15%">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						@if (count($errors) > 0)
-						<div style="text-align: center;color: red">
-							<!-- <strong>Whoops!</strong> There were some problems with your input.<br><br> -->
-							
+						<div style="text-align: center;color: red">					
 								@foreach ($errors->all() as $error)
 									<li>{{ $error }}</li>
 								@endforeach
-							
 						</div>
 					    @endif
 						<div class="form-group">

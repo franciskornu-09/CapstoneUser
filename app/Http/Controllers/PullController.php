@@ -2,7 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -15,9 +15,7 @@ class PullController extends Controller {
 	 */
 	public function index()
 	{
-		$users = DB::select('select * from post');
-
-        return view('first', compact('users'));
+		//
 	}
 
 	/**
@@ -28,6 +26,7 @@ class PullController extends Controller {
 	public function create()
 	{
 		//
+		return view('alert');
 	}
 
 	/**
@@ -35,9 +34,14 @@ class PullController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
 		//
+		$id = Auth::user()->name;//This is to retrieve the username of the individual using the application
+		$topicName = $request->get('topic');
+		$messageDetail = $request->get('message');
+		$message = DB::select( DB::raw("INSERT into admin_alert set topic = '$topicName', message = '$messageDetail', sender = '$id',created_at = NOW()"));
+		return view('main');
 	}
 
 	/**

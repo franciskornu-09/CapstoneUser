@@ -1,14 +1,6 @@
 <?php $__env->startSection('content'); ?>
-		<!-- 	<div class="content"> -->
-				<!-- welcome -->
-				<!-- <center><u><div style="width: 50%;font-size: 230%">Inbox</div></u></center> -->
-				<!-- <ul class="nav nav-tabs" role="tablist">
-									  <li class="nav-item">
-									    <a class="nav-link active" data-toggle="tab" href="#home" role="tab">Home</a>
-									  </li>
-									  </ul> -->
-				<div class="agile-main"> 
-		
+
+	<div class="agile-main"> 	
 		<div class="content-wrap">
 			<div class="header" style="background: white"> 
 
@@ -17,58 +9,44 @@
 			</div>
 		</div>
 	</div>
-				<div class="welcome" style="background: white">
-
-					   <div class="welcome-info">
-						<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
-							
-							<div id="myTabContent" class="tab-content">
-								<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
-									<div class="tabcontent-grids" style="height: 320px">
-									<center>
-
-									
-									<div class="row" style="background: white;height:50%">
-									<?php foreach($message as $post): ?>
-									<div class="card">
-									  <div class="card-header">
-									    <i><?php echo e($post->topic); ?></i>
+	<div class="welcome" style="background: white">
+	   <div class="welcome-info">
+			<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">	
+				<div id="myTabContent" class="tab-content">
+					<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+						<div class="tabcontent-grids" style="height: 320px">
+							<center>
+							<div class="row" style="background: white;height:50%">
+								<?php foreach($message as $post): ?>
+								<div class="card">
+								  <div class="card-header">
+								    <i><?php echo e($post->topic); ?></i>
 									  </div>
-									  <div class="card-block">
+									<div class="card-block">
 									    <blockquote class="card-blockquote">
 									      <p><?php echo e($post->messages); ?></p>
 									      <footer><?php echo e($post->date); ?></footer>
 									    </blockquote>
-									  </div>
 									</div>
-							        <?php endforeach; ?>
+								</div>
+							     <?php endforeach; ?>
 									<span style="float: left"><a href="<?php echo e(action('MessageController@index')); ?>" style="color: black"><i class="glyphicon glyphicon-chevron-left"></i> Back</a></span>
 									
-										</div>
-										 </center>
-										<div>........................</div>
-										
-									 </div>
-								</div>
-							</div>  
-					</div>  	
-				</div> 
-				</div> 
-			<!-- </div> -->
+							</div>
+							</center>
+							<div>........................</div>				
+						</div>
+					</div>
+				</div>  
+			</div>  	
+		</div> 
+    </div> 
 	<script src="<?php echo e(asset('js/custom.js')); ?>"></script>
 	<script src="<?php echo e(asset('js/classie.js')); ?>"></script>
 	<script src="<?php echo e(asset('js/main.js')); ?>"></script>
 	<!-- //menu-js -->
 	<!-- nice scroll-js -->
 	<script src="<?php echo e(asset('js/jquery.nicescroll.min.js')); ?>"></script>
-	<script>		
-		$(document).ready(function() {
-	  
-			var nice = $("html").niceScroll();  // The document page (body)
-		
-			$("#boxscroll").niceScroll({cursorborder:"",cursorcolor:"#00F",boxzoom:true}); // First scrollable DIV
-		});
-	</script>
 	<!-- //nice scroll-js -->
 	<!-- Bootstrap core JavaScript
     ================================================== -->

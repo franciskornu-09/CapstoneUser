@@ -1,5 +1,5 @@
 <?php $__env->startSection('content'); ?>
-			<!-- <div class="content"> -->
+			<!-- This page displays information obtained from the database. This show details about the event-->
 				<!-- banner -->
 				<div class="banner about-banner"> 
 					<div class="banner-img">  
@@ -27,20 +27,16 @@
 							</div>
 							<div class="w3ls-text">
 								<h5><span class="glyphicon glyphicon-map-marker"></span><a href="<?php echo route ('mapLoc', ['id'=>$post->name]); ?>">vendor locations</a></h5><br>
-								<!-- <h6>Vip: <?php echo e($post->vip_ticket); ?></h6>  -->
 								<p>Regular: <?php echo e($post->regular_ticket); ?></p>
 								<p><b>Tickets Left :</b> <?php echo e($post->number_left); ?> </p>
-								<!-- <p style="float: right"><a onClick="alert('<?php echo e($post->description); ?>')">More</a></p> -->
 								<p><b>Description: </b><?php echo e($post->description); ?></p>
 								</div>
 							
 						</div>
-						</div>
-						<?php endforeach; ?>
-						<div class="clearfix"> </div>
 					</div>
-					
-			<!-- </div> -->
+						<?php endforeach; ?>
+					<div class="clearfix"> </div>
+				</div>
 	<script src="<?php echo e(asset('js/classie.js')); ?>"></script>
 	<script src="<?php echo e(asset('js/main.js')); ?>"></script>
 	<!-- //menu-js -->

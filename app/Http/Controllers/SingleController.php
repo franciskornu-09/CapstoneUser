@@ -17,7 +17,8 @@ class SingleController extends Controller {
 	 * @return Response 
 	 */
 	public function index()
-	{
+	{	
+		//This is to redirect to a page named single.blade.php
 		return view('single');
 	}
 
@@ -42,9 +43,11 @@ class SingleController extends Controller {
 	}
 
 	/**
-	 * Display the specified resource.
+	 * This function recieves information after a user has made payment for a ticket
+	 * All information is then recorded and sent into the database
+	 * A QR code is generated using information about the event and the number of the user
 	 *
-	 * @param  int  $id
+	 * @param  Request $request
 	 * @return Response
 	 */
 	public function show(Request $request)
@@ -77,23 +80,14 @@ class SingleController extends Controller {
 
 		$message="You have made payment of GH$ $totalAmount for the $name event. Please make it a point to attend. You would not regret it. Feel free to share the news with all your loved ones.";
 
-		$message = preg_replace('/\s+/', '%20', $message);
-		
-		
-		// "http://api.deywuro.com/bulksms/?username=francisK&password=genKay0450&type=0&dlr=1&destination=$phoneNumber&source=fd&message=";
+		$message = preg_replace('/\s+/', '%20', $message);/* This line is to replace all spaces in the 
+		message with %20. This would make it possible to send the message to the users phone as a text message.*/
 		$ch = curl_init();
-
 		curl_setopt($ch, CURLOPT_URL,"http://api.deywuro.com/bulksms/?username=francisK&password=genKay0450&type=0&dlr=1&destination=$phoneNumber&source=fd&message=$message");
 		curl_setopt($ch, CURLOPT_POST, 1);
-		// in real life you should use something like:
-		 curl_setopt($ch, CURLOPT_POSTFIELDS, 
-		          http_build_query(array('postvar1' => 'value1')));
-
-		// receive server response ...
+		curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query(array('postvar1' => 'value1')));
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
 		$server_output = curl_exec ($ch);
-
 		curl_close ($ch);
 
 	return redirect()->route('qr2');

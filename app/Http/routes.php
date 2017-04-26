@@ -10,16 +10,16 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-use Illuminate\Support\Facades\DB;
 
-
+/*This route is to direct the user to the index page where they see the events pulled from the 
+ database */
 Route::get('/', 'EventController@index');
 
+/*This route is to direct the user to the register page */
 Route::get('index','IndexController@index');
 
+/*This route is to direct the user to the log in page */
 Route::get('home', 'HomeController@index');
-
-Route::get('contact','ContactController@index');
 
 Route::get('about','AboutController@index');
 
@@ -52,6 +52,10 @@ Route::get('inbox','MessageController@index');
 Route::post('message','SingleController@show');
 
 Route::get('testing','AboutController@create');
+
+Route::get('alert','PullController@create');
+
+Route::post('send','PullController@store');
 
 Route::filter('auth', function()
 {
@@ -100,9 +104,5 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-// Route::post('/update/{{id}}',[
-//     'uses' => 'TableController@update', 
-//     'as' => 'send'
-// ]);
 
 

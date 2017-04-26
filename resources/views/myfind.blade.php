@@ -1,8 +1,7 @@
 @extends('app')
 
 @section('content')
-
-<!-- <div class="content"> -->
+<!-- This page is what the user would see if the word searched for does not turn up any results. The user is given the chance to search again using the search box at the bottom of the screen -->
 				<!-- banner -->
 				<div class="banner about-banner"> 
 					<div class="banner-img">  
@@ -24,24 +23,13 @@
 						<button class="btn btn btn-info active" role="button" aria-pressed="true" style="width: auto">Search</button>
 					</form>
 					</center>
-					</div>
-					
-			<!-- </div> -->
+				</div>
 	<!-- menu-js -->
 	<script src="{{ asset('js/classie.js') }}"></script>
 	<script src="{{ asset('js/main.js') }}"></script>
 	<!-- //menu-js -->
 	<!-- nicescroll-js -->
 	<script src="{{ asset('js/jquery.nicescroll.min.js') }}"></script> 
-	<script>
-		$(document).ready(function() {
-	  
-			var nice = $("html").niceScroll();  // The document page (body)
-		
-		
-			$("#boxscroll").niceScroll({cursorborder:"",cursorcolor:"#00F",boxzoom:true}); // First scrollable DIV
-		});
-	</script>
 	<!-- //nicescroll-js -->
 	<!-- Bootstrap core JavaScript
     ================================================== -->

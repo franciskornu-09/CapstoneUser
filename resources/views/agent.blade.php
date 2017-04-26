@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('content')
-			<!-- <div class="content"> -->
+			<!-- This page is to allow the user search the system for events using key words or phrases-->
 				<!-- banner -->
 				<div class="banner about-banner"> 
 					<div class="banner-img">  
@@ -9,9 +9,8 @@
 					</div> 
 				</div>
 				<!-- //banner -->
-				<!-- agents -->
-
 				<div class="w3agile agents" style="margin-bottom: 120px"> 
+
 					<h3 class="w3ls-title">Find Something!!!</h3>
 					 <center>
 					 <form method="post" action="{{action("FindController@index")}}">

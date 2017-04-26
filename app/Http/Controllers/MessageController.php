@@ -19,7 +19,6 @@ class MessageController extends Controller {
 		$message=collect();
 		$id = Auth::user()->id;
 	    $message = DB::select( DB::raw("SELECT id,topic,messages,choices,created_at as date from msg_table where users_id =$id order by date DESC"));
-		// $message = DB::select('select topic,messages,choices,created_at as date from msg_table where users_id = ?', [$id]);
 		return view('inbox',compact('message'));
 	}
 

@@ -1,13 +1,14 @@
 @extends('app')
 
 @section('content')
+<!-- This page is to allow the user edit the details such as the name, email address -->
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-info">
-								<div class="panel-heading">Update</div>
-								<div class="panel-body">
-<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}">
+				<div class="panel-heading">Update</div>
+					<div class="panel-body">
+             		    <form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 						<div class="form-group">
@@ -53,10 +54,10 @@
 							</div>
 						</div>
 					</form>
-					</div>
-</div>
-</div>
-</div>
+				</div>
+			</div>
+        </div>
+    </div>
 </div>
 	<script src="{{ asset('js/classie.js') }}"></script>
 	<script src="{{ asset('js/main.js') }}"></script>

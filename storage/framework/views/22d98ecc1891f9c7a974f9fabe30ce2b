@@ -1,5 +1,5 @@
 <?php $__env->startSection('content'); ?>
-			<!-- <div class="content"> -->
+			<!-- This page is to allow the user search the system for events using key words or phrases-->
 				<!-- banner -->
 				<div class="banner about-banner"> 
 					<div class="banner-img">  
@@ -10,6 +10,7 @@
 				<!-- agents -->
 
 				<div class="w3agile agents" style="margin-bottom: 120px"> 
+
 					<h3 class="w3ls-title">Find Something!!!</h3>
 					 <center>
 					 <form method="post" action="<?php echo e(action("FindController@index")); ?>">

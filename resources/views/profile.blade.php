@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('content')
-			<!-- <div class="content"> -->
+			<!-- The page to dispaly the necessary information about the user -->
 				<!-- banner -->
 				<div class="welcome">
 					   <div class="welcome-info">
@@ -14,7 +14,7 @@
 									<h3 style="color: #00ccff"><u>User Profile</u></h3><br>	
 
 										
-										<div class="row" style="background: white;height:50%">
+									<div class="row" style="background: white;height:50%">
 									@foreach($details as $code)
 									<div class="card">
 									  <div class="card-header">
@@ -43,9 +43,6 @@
 						</div>
 					</div>
 				</div>
-		
-		
-<!-- 	</div>  -->
 	<!-- menu-js -->
 	<script src="{{ asset('js/classie.js') }}"></script>
 	<script src="{{ asset('js/main.js') }}"></script>

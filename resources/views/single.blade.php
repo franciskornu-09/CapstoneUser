@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('content')
-			<!-- <div class="content"> -->
+	<!-- This page displays more information about the event and allows the user make payment for the ticket using various options -->
 				<!-- banner -->
 				<div class="banner about-banner"> 
 					<div class="banner-img">  
@@ -77,8 +77,6 @@
 							 <center>
 							<input data-provide="typeahead" data-items="4" id="phoneNumber" name="phoneNumber" type="number" class="span2 search-query" placeholder="233XXXXXXXXX" style="width: 90%">
 							</center>
-						
-							
 							</div>
 
 							<div class="form-group" style="display:none;" id="card">
@@ -89,14 +87,13 @@
 							<input name="master" type="radio" value="master">MASTER CARDS
 							</center>
 
-
 							<input data-provide="typeahead" data-items="4" id="phone" name="phone" type="number" class="span2 search-query" placeholder="Valid Card Number" style="width: 90%">
 							<input data-provide="typeahead" data-items="4" id="phone" name="phone" type="text" class="span2 search-query" placeholder="Card Holders Name" style="width: 90%">
 							<input data-provide="typeahead" style="width: 50%" data-items="2" id="phone" name="phone" type="number" class="span2 search-query" placeholder="MM/YY" style="width: auto">
 							<input data-provide="typeahead" style="width: 50%" data-items="2" id="phone" name="phone" type="number" class="span2 search-query" placeholder="MM/YY" style="width: auto">
-
 							</div>
-							  <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+							<input type="hidden" name="_token" value="{{ csrf_token() }}">
 							<button class="btn btn btn-info active" role="button" aria-pressed="true" style="width: auto">Buy</button>
 							</form>
 						</div>
@@ -106,13 +103,15 @@
 				@endforeach
 			</div>
 		</div>
-<!-- 	</div>  -->
 	<!-- menu-js -->
 	<script src="{{ asset('js/classie.js') }}"></script>
 	<script src="{{ asset('js/main.js') }}"></script>
 	<!-- //menu-js -->
 	<!-- nicescroll-js -->
 	<script src="{{ asset('js/jquery.nicescroll.min.js') }}"></script> 
+	
+
+	<!-- This is a script to drop down different details based on what the user picks -->
 	<script>
 		function showCard(name) {
 			if (name == "card"){

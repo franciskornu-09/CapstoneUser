@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('content')
-		<!-- 	<div class="content"> -->
+		<!-- This page shows the various messages received from the administrators of the application -->
 				<!-- banner -->
 				<div class="banner">
 					<div id="kb" class="carousel kb_elastic animate_text kb_wrapper" data-ride="carousel" data-interval="6000" data-pause="hover">
@@ -81,8 +81,7 @@
 							</div>  
 					</div>  	
 				</div> 
-				</div> 
-			<!-- </div> -->
+			</div> 
 <script src="{{ asset('js/custom.js') }}"></script>
 	<script src="{{ asset('js/classie.js') }}"></script>
 	<script src="{{ asset('js/main.js') }}"></script>

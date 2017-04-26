@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('content')
-			<!-- <div class="content"> -->
+			<!-- This page displays information obtained from the database. This show details about the event-->
 				<!-- banner -->
 				<div class="banner about-banner"> 
 					<div class="banner-img">  
@@ -29,20 +29,16 @@
 							</div>
 							<div class="w3ls-text">
 								<h5><span class="glyphicon glyphicon-map-marker"></span><a href="{!! route ('mapLoc', ['id'=>$post->name]) !!}">vendor locations</a></h5><br>
-								<!-- <h6>Vip: {{$post->vip_ticket}}</h6>  -->
 								<p>Regular: {{$post->regular_ticket}}</p>
 								<p><b>Tickets Left :</b> {{$post->number_left}} </p>
-								<!-- <p style="float: right"><a onClick="alert('{{$post->description}}')">More</a></p> -->
 								<p><b>Description: </b>{{$post->description}}</p>
 								</div>
 							
 						</div>
-						</div>
-						@endforeach
-						<div class="clearfix"> </div>
 					</div>
-					
-			<!-- </div> -->
+						@endforeach
+					<div class="clearfix"> </div>
+				</div>
 	<script src="{{ asset('js/classie.js') }}"></script>
 	<script src="{{ asset('js/main.js') }}"></script>
 	<!-- //menu-js -->
